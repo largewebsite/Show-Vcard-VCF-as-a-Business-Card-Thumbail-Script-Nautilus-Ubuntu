@@ -11,7 +11,7 @@ for card in $VCARDS
 do
 	#checks to see if generated icon exists, if no, generate thumbnail. if yes, assign thumbnail. 
 	if [ ! -f "$THUMBNAIL_DIR/$card.png" ]; then
-		#python generatethumbnail.py $f
+		python generatethumbnail.py $f
 	else	
 		gvfs-set-attribute -t string $card metadata::custom-icon file:///.vcardthumbnails/"$card.png"
 	fi
